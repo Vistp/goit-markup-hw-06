@@ -662,6 +662,45 @@ p {
   fill: var(--hero-title-color);
 }
 
+.wrapper-form {
+  margin-left: auto;
+}
+
+.footer-email {
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.footer-email::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.button-footer {
+  position: relative;
+
+  margin-left: 12px;
+  padding-left: 29px;
+  padding-right: 0;
+  text-align: left;
+}
+
+.button-footer .icon {
+position: absolute;
+top: 10px;
+right: 28px;
+}
+
 /* modal */
 .backdrop {
   position: fixed;
