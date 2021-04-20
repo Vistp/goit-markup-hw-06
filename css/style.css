@@ -678,6 +678,13 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-email:focus,
+.footer-email:hover {
+  border-color: var(--accent);
 }
 
 .footer-email::placeholder {
@@ -757,6 +764,13 @@ right: 28px;
 
 .close {
   fill: var(--logo-text-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close:focus,
+.close:hover {
+  fill: var(--accent);
 }
 
 .form {
@@ -772,6 +786,19 @@ right: 28px;
   color: var(--title-text-color);
 }
 
+.field-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.field-wrapper .icon {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .field-label {
   margin-bottom: 4px;
   font-size: 12px;
@@ -779,43 +806,31 @@ right: 28px;
   letter-spacing: 0.01em;
 }
 
-.field {
-  /* margin-bottom: 10px; */
+.field-input {
+  padding-left: 42px;
   width: 448px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.field-name {
-  position: relative;
-  margin-bottom: 10px;
-}
-.name {
-  position: absolute;
-  bottom: 11px;
-  left: 12px;
+.field-input:hover, 
+.field-input:focus {
+  border-color: var(--accent);
 }
 
-.field-tel {
-  position: relative;
-  margin-bottom: 10px;
-}
-.telefon {
-  position: absolute;
-  bottom: 11px;
-  left: 12px;
+.field-input:hover + .icon,
+.field-input:focus + .icon {
+  fill: var(--accent);
 }
 
-.field-email {
-  position: relative;
-  margin-bottom: 10px;
-}
-.email {
-  position: absolute;
-  bottom: 11px;
-  left: 12px;
-}
+/* меняет цвет иконки, когда в диве филд-враппер
+ есть элемент с фокусом */
+/* .field-wrapper:focus-within>.icon {
+  fill: var(--accent);
+} */ 
 
 textarea {
   margin-bottom: 20px;
@@ -832,7 +847,14 @@ textarea {
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+ textarea:hover,
+ textarea:focus {
+   border-color: var(--accent);
+ }
 
 textarea::placeholder {
   font-size: 12px;
@@ -841,14 +863,14 @@ textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.checkbox {
+.check-label {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.checkbox>input {
+.checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -859,9 +881,21 @@ textarea::placeholder {
   clip: rect(0 0 0 0);
 } 
 
-.modal-checkbox {
+.icon-check {
+  width: 16px;
+  height: 15px;
   margin-right: 8px;
+  background-image: url("../images/checkbox.svg");
 
+  transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:checked + .icon-check {
+  background-image: url("../images/checked.svg");
+}
+
+.check-link {
+  color: var(--accent);
 }
 
 .button-submit {
